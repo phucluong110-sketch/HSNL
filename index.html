@@ -292,7 +292,6 @@
             loadStepDetails(currentStepId);
             initResizableColumns();
             
-            // Nếu chạy link xem trực tuyến quét QR (#view) -> Khóa toàn bộ tính năng chỉnh sửa để người dùng cuối chỉ đọc
             if (window.location.hash === '#view') {
                 document.getElementById('header-title').contentEditable = "false";
                 document.getElementById('header-subtitle').contentEditable = "false";
@@ -362,7 +361,6 @@
         function handleDrop(e) { e.preventDefault(); document.getElementById('media-dropzone').classList.remove('drag-over-zone'); if (window.location.hash === '#view') return; if (e.dataTransfer.files.length > 0) { Array.from(e.dataTransfer.files).forEach(file => processUploadedFile(file)); } }
         function handleFileSelect(input, forcedType) { if (input.files && input.files.length > 0) { Array.from(input.files).forEach(file => processUploadedFile(file, forcedType)); } input.value = ''; }
 
-        // MÃ HÓA ẢNH/VIDEO THÀNH CHUỖI VĂN BẢN (BASE64) ĐỂ ĐỒNG BỘ LIÊN THIẾT BỊ
         function processUploadedFile(file, forcedType) {
             const step = sopData.find(s => s.id === currentStepId); if (!step) return;
             let isImage = file.type.startsWith('image/'); let isVideo = file.type.startsWith('video/');
@@ -371,7 +369,7 @@
             const mediaId = Date.now() + Math.floor(Math.random() * 1000);
 
             if (isVideo && file.size > 3 * 1024 * 1024) {
-                alert("File video tải lên trực tiếp quá lớn (>3MB). Bạn nên dùng 'CÁCH 1: Dán Link trực tuyến' (như link Youtube, Drive, hoặc link web khác) để trang chạy mượt và không bị đứng!");
+                alert("File video tải lên trực tiếp quá lớn (>3MB). Bạn nên dùng 'CÁCH 1: Dán Link trực tuyến' để trang chạy mượt hơn!");
             }
 
             const reader = new FileReader();
@@ -392,7 +390,6 @@
             reader.readAsDataURL(file);
         }
 
-        // THÊM ẢNH/VIDEO BẰNG ĐƯỜNG LINK TRỰC TUYẾN TỪ WEB KHÁC
         function addMediaByUrl() {
             const urlInput = document.getElementById('input-url-media');
             const url = urlInput.value.trim();
@@ -415,7 +412,7 @@
             urlInput.value = "";
             saveAllToStorage();
             loadStepDetails(currentStepId);
-            alert("Đã thêm liên kết trực tuyến thành công! Hãy nhớ bấm nút 'Xuất dữ liệu GitHub' ở góc trên để cập nhật code.");
+            alert("Đã thêm liên kết trực tuyến thành công! Nhớ bấm nút 'Xuất dữ liệu GitHub' để cập nhật code.");
         }
 
         function loadStepDetails(id) {
@@ -432,7 +429,7 @@
             document.getElementById('input-step-tools').value = step.tools || '';
             document.getElementById('input-step-warning').value = step.warning || '';
 
-            // HÌNH ẢNH 
+            // TÍNH NĂNG XỬ LÝ ẢNH REAL-TIME (KHỬ CACHE TRÌNH DUYỆT BẰNG TIMESTAMP)
             const imgEl = document.getElementById('display-image');
             const imgPlaceholder = document.getElementById('image-placeholder');
             const imgStrip = document.getElementById('image-list-strip');
@@ -442,7 +439,12 @@
                 if (!step.images.some(i => i.id === activeImgId)) activeImgId = step.images[0].id;
                 const currentImg = step.images.find(i => i.id === activeImgId);
                 if (currentImg && currentImg.src) {
-                    imgEl.src = currentImg.src; imgEl.classList.remove('hidden'); imgPlaceholder.classList.add('hidden');
+                    // Nếu là đường link URL trực tuyến (http/https), chèn thêm mã thời gian ngẫu nhiên để xóa sạch cache cũ
+                    let finalImgSrc = currentImg.src;
+                    if (finalImgSrc.startsWith('http')) {
+                        finalImgSrc += (finalImgSrc.includes('?') ? '&' : '?') + 'refresh=' + Date.now();
+                    }
+                    imgEl.src = finalImgSrc; imgEl.classList.remove('hidden'); imgPlaceholder.classList.add('hidden');
                 } else {
                     imgEl.classList.add('hidden'); imgPlaceholder.classList.remove('hidden');
                 }
@@ -450,7 +452,7 @@
                 imgEl.classList.add('hidden'); imgPlaceholder.classList.remove('hidden'); imgStrip.classList.add('hidden'); activeImgId = null;
             }
 
-            // VIDEO
+            // TÍNH NĂNG XỬ LÝ VIDEO REAL-TIME (KHỬ CACHE TRÌNH DUYỆT BẰNG TIMESTAMP)
             const vidEl = document.getElementById('display-video');
             const vidPlaceholder = document.getElementById('video-placeholder');
             const vidStrip = document.getElementById('video-list-strip');
@@ -460,7 +462,11 @@
                 if (!step.videos.some(v => v.id === activeVidId)) activeVidId = step.videos[0].id;
                 const currentVid = step.videos.find(v => v.id === activeVidId);
                 if (currentVid && currentVid.src) {
-                    vidEl.src = currentVid.src; vidEl.classList.remove('hidden'); vidPlaceholder.classList.add('hidden'); vidEl.load();
+                    let finalVidSrc = currentVid.src;
+                    if (finalVidSrc.startsWith('http')) {
+                        finalVidSrc += (finalVidSrc.includes('?') ? '&' : '?') + 'refresh=' + Date.now();
+                    }
+                    vidEl.src = finalVidSrc; vidEl.classList.remove('hidden'); vidPlaceholder.classList.add('hidden'); vidEl.load();
                 } else {
                     vidEl.classList.add('hidden'); vidPlaceholder.classList.remove('hidden'); vidEl.src = "";
                 }
@@ -589,7 +595,6 @@
             }
         }
 
-        // TÍNH NĂNG XUẤT MÃ DỮ LIỆU ĐỂ CẬP NHẬT LÊN GITHUB
         function exportJsonData() {
             const jsonStr = JSON.stringify(sopData, null, 2);
             document.getElementById('json-textarea').value = jsonStr;
@@ -604,11 +609,10 @@
                 alert('Đã sao chép mã dữ liệu thành công! Hãy dán đè vào vị trí "const defaultSopData = [...]" trong file index.html trên GitHub nhé.');
                 document.getElementById('json-modal').classList.add('hidden');
             } catch (err) {
-                alert('Trình duyệt không hỗ trợ copy tự động, bạn vui lòng chọn tất cả chữ trong ô rồi nhấn Ctrl+C.');
+                alert('Vui lòng chọn tất cả chữ trong ô rồi nhấn Ctrl+C.');
             }
         }
 
-        // Chạy ứng dụng khi tải xong trang
         window.onload = initApp;
     </script>
 </body>
