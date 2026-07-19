@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<!-- saved from url=(0170)file:///C:/Users/LENOVO/SmartPrintPallet/H%E1%BB%93%20s%C6%A1%20n%C4%83ng%20l%E1%BB%B1c%20s%E1%BB%91%20-%20h%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20v%E1%BA%ADn%20h%C3%A0nh.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Số hóa &amp; Mô phỏng Hướng dẫn Thao tác Vận hành (SOP Studio)</title>
+    <script src="./Hồ sơ năng lực số - hướng dẫn vận hành_files/saved_resource"></script>
+    <link rel="stylesheet" href="./Hồ sơ năng lực số - hướng dẫn vận hành_files/all.min.css">
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1f2937; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
+        
+        .theme-cmyk { --accent-color: #00aeef; --accent-hover: #008bbf; --accent-glow: rgba(0, 174, 239, 0.2); }
+        .dynamic-text { color: var(--accent-color); }
+        .dynamic-bg { background-color: var(--accent-color); }
+        .dynamic-border { border-color: var(--accent-color); }
+        .dynamic-btn:hover { background-color: var(--accent-hover); }
+        .dynamic-focus:focus { border-color: var(--accent-color); box-shadow: 0 0 0 3px var(--accent-glow); }
+        
+        .editable-active:focus { outline: none; background: rgba(255,255,255,0.05); border-radius: 4px; padding: 2px 4px; }
+        .drag-over-zone { border: 2px dashed var(--accent-color) !important; background-color: rgba(0,0,0,0.6) !important; }
+
+        /* THANH KÉO GIÃN ĐỘ RỘNG CỘT */
+        .column-resizer {
+            width: 6px;
+            cursor: col-resize;
+            background-color: #1f2937;
+            position: relative;
+            transition: background-color 0.15s;
+            flex-shrink: 0;
+            z-index: 20;
+        }
+        .column-resizer:hover, .column-resizer.dragging {
+            background-color: var(--accent-color, #00aeef);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.z-10{z-index:10}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mr-1{margin-right:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-3{height:0.75rem}.h-\[520px\]{height:520px}.h-full{height:100%}.h-4{height:1rem}.max-h-\[200px\]{max-height:200px}.max-h-full{max-height:100%}.min-h-0{min-height:0px}.min-h-screen{min-height:100vh}.w-3{width:0.75rem}.w-full{width:100%}.w-4{width:1rem}.w-48{width:12rem}.min-w-\[350px\]{min-width:350px}.max-w-full{max-width:100%}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-r-lg{border-top-right-radius:0.5rem;border-bottom-right-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-l-4{border-left-width:4px}.border-dashed{border-style:dashed}.border-amber-900\/20{border-color:rgb(120 53 15 / 0.2)}.border-amber-900\/40{border-color:rgb(120 53 15 / 0.4)}.border-amber-900\/60{border-color:rgb(120 53 15 / 0.6)}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-\[var\(--accent-color\)\]{border-color:var(--accent-color)}.bg-\[\#00aeef\]{--tw-bg-opacity:1;background-color:rgb(0 174 239 / var(--tw-bg-opacity, 1))}.bg-\[\#ec008c\]{--tw-bg-opacity:1;background-color:rgb(236 0 140 / var(--tw-bg-opacity, 1))}.bg-\[\#fff200\]{--tw-bg-opacity:1;background-color:rgb(255 242 0 / var(--tw-bg-opacity, 1))}.bg-amber-950\/10{background-color:rgb(69 26 3 / 0.1)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-gray-900\/40{background-color:rgb(17 24 39 / 0.4)}.bg-gray-900\/50{background-color:rgb(17 24 39 / 0.5)}.bg-gray-950{--tw-bg-opacity:1;background-color:rgb(3 7 18 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-gray-900\/60{background-color:rgb(17 24 39 / 0.6)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-gray-800{--tw-gradient-from:#1f2937 var(--tw-gradient-from-position);--tw-gradient-to:rgb(31 41 55 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.object-contain{object-fit:contain}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-2\.5{padding:0.625rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.pb-4{padding-bottom:1rem}.pr-1{padding-right:0.25rem}.pl-1{padding-left:0.25rem}.pr-2{padding-right:0.5rem}.text-center{text-align:center}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-5xl{font-size:3rem;line-height:1}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-gray-700 *::selection{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-gray-700::selection{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:border-amber-900\/60:hover{border-color:rgb(120 53 15 / 0.6)}.hover\:border-gray-700:hover{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.hover\:border-gray-800:hover{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-800:hover{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-900\/60:hover{background-color:rgb(17 24 39 / 0.6)}.hover\:text-rose-400:hover{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-gray-200:hover{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.focus\:border-gray-700:focus{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-offset-gray-900:focus{--tw-ring-offset-color:#111827}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.z-10{z-index:10}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mr-1{margin-right:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.ml-1{margin-left:0.25rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-\[520px\]{height:520px}.h-full{height:100%}.max-h-\[200px\]{max-height:200px}.max-h-full{max-height:100%}.min-h-0{min-height:0px}.min-h-screen{min-height:100vh}.w-3{width:0.75rem}.w-4{width:1rem}.w-48{width:12rem}.w-full{width:100%}.min-w-\[350px\]{min-width:350px}.max-w-full{max-width:100%}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.rotate-90{--tw-rotate:90deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-r-lg{border-top-right-radius:0.5rem;border-bottom-right-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-\[var\(--accent-color\)\]{border-color:var(--accent-color)}.border-amber-900\/20{border-color:rgb(120 53 15 / 0.2)}.border-amber-900\/40{border-color:rgb(120 53 15 / 0.4)}.border-amber-900\/60{border-color:rgb(120 53 15 / 0.6)}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.bg-\[\#00aeef\]{--tw-bg-opacity:1;background-color:rgb(0 174 239 / var(--tw-bg-opacity, 1))}.bg-\[\#ec008c\]{--tw-bg-opacity:1;background-color:rgb(236 0 140 / var(--tw-bg-opacity, 1))}.bg-\[\#fff200\]{--tw-bg-opacity:1;background-color:rgb(255 242 0 / var(--tw-bg-opacity, 1))}.bg-amber-950\/10{background-color:rgb(69 26 3 / 0.1)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-gray-900\/40{background-color:rgb(17 24 39 / 0.4)}.bg-gray-900\/50{background-color:rgb(17 24 39 / 0.5)}.bg-gray-900\/60{background-color:rgb(17 24 39 / 0.6)}.bg-gray-950{--tw-bg-opacity:1;background-color:rgb(3 7 18 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-gray-800{--tw-gradient-from:#1f2937 var(--tw-gradient-from-position);--tw-gradient-to:rgb(31 41 55 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.object-contain{object-fit:contain}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-0\.5{padding:0.125rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-4{padding-bottom:1rem}.pl-1{padding-left:0.25rem}.pr-1{padding-right:0.25rem}.pr-2{padding-right:0.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-5xl{font-size:3rem;line-height:1}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-gray-700 *::selection{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-gray-700::selection{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:border-amber-900\/60:hover{border-color:rgb(120 53 15 / 0.6)}.hover\:border-gray-700:hover{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.hover\:border-gray-800:hover{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-800:hover{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-900\/60:hover{background-color:rgb(17 24 39 / 0.6)}.hover\:text-gray-200:hover{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.hover\:text-rose-400:hover{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-b:focus{border-bottom-width:1px}.focus\:border-gray-700:focus{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-offset-gray-900:focus{--tw-ring-offset-color:#111827}.group\/branch:hover .group-hover\/branch\:opacity-100{opacity:1}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body id="app-body" class="theme-cmyk bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans selection:bg-gray-700 selection:text-white">
+
+    <!-- HEADER BAR (ĐÃ XÓA CÁC NÚT ĐIỀU KHIỂN RƯỜM RÀ) -->
+    <header id="main-header" class="bg-gray-950 border-b border-gray-800 px-6 py-4 flex justify-between items-center shadow-lg z-10">
+        <div class="flex items-center space-x-3">
+            <div class="flex space-x-1">
+                <span class="w-3 h-3 rounded-full bg-[#00aeef]"></span>
+                <span class="w-3 h-3 rounded-full bg-[#ec008c]"></span>
+                <span class="w-3 h-3 rounded-full bg-[#fff200]"></span>
+                <span class="w-3 h-3 rounded-full bg-black border border-gray-600"></span>
+            </div>
+            <div>
+                <h1 id="header-title" class="text-xl font-bold tracking-wide text-white editable-active" contenteditable="false" oninput="saveAllToStorage()">QUY TRÌNH THAO TÁC VẬN HÀNH</h1>
+                <p id="header-subtitle" class="text-xs text-gray-400 editable-active mt-0.5" contenteditable="false" oninput="saveAllToStorage()">Hướng dẫn thao tác - vận hành máy in Offset tờ rời</p>
+            </div>
+        </div>
+        
+        <div>
+            <button id="btn-focus-mode" onclick="toggleFocusMode()" class="bg-gray-800 hover:bg-gray-700 text-amber-400 border border-amber-900/60 text-xs font-medium px-3 py-2 rounded-lg shadow flex items-center gap-1.5 transition"><i class="fa-solid fa-expand"></i> Chế độ Tập trung</button>
+        </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <div class="flex-1 flex overflow-hidden w-full" id="workspace-container">
+        
+        <!-- SIDEBAR PANEL (CỘT CÁC BƯỚC) -->
+        <aside id="sidebar-panel" style="width: 320px; min-width: 220px; max-width: 480px;" class="bg-gray-950 flex flex-col justify-between flex-shrink-0">
+            <div class="p-4 overflow-y-auto flex-1 custom-scrollbar">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-400 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol"></i> Danh Sách Bước Thao Tác
+                    </h2>
+                    <button id="sidebar-add-btn" onclick="addNewStep()" class="text-[11px] bg-gray-800 hover:bg-gray-700 dynamic-text border border-gray-700 px-2 py-1 rounded transition flex items-center gap-1 hidden">
+                        <i class="fa-solid fa-plus"></i> Thêm Bước
+                    </button>
+                </div>
+                <div id="steps-list" class="space-y-2">
+                    <div onclick="selectStep(1)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition bg-gradient-to-r from-gray-800 to-gray-850 border-l-4 dynamic-border text-white shadow-md">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold dynamic-text">01</span>
+                            <span class="text-xs font-medium truncate">An toàn lao động - Kỹ thuật vận hành</span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 1)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                
+                    <div onclick="selectStep(2)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold text-gray-600">02</span>
+                            <span class="text-xs font-medium truncate">Giai đoạn chuẩn bị </span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 2)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                
+                    <div onclick="selectStep(3)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold text-gray-600">03</span>
+                            <span class="text-xs font-medium truncate">Công đoạn in thử bài </span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 3)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                
+                    <div onclick="selectStep(4)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold text-gray-600">04</span>
+                            <span class="text-xs font-medium truncate">Công đoạn sản xuất </span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 4)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                
+                    <div onclick="selectStep(5)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold text-gray-600">05</span>
+                            <span class="text-xs font-medium truncate">Kết thúc sản xuất</span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 5)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                
+                    <div onclick="selectStep(6)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold text-gray-600">06</span>
+                            <span class="text-xs font-medium truncate">Nghiệm thu và vệ sinh </span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 6)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                
+                    <div onclick="selectStep(7)" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold text-gray-600">07</span>
+                            <span class="text-xs font-medium truncate">Bảo trì - vệ sinh </span>
+                        </div>
+                        
+                    <button onclick="deleteStep(event, 7)" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                
+                    </div>
+                </div>
+            </div>
+            <div id="footer-text" class="p-4 bg-gray-900/50 border-t border-gray-800 text-center text-xs text-gray-500 editable-active" contenteditable="false" oninput="saveAllToStorage()">Hồ sơ năng lực số © 2026 HCMUTE</div>
+        </aside>
+
+        <!-- THANH KÉO GIÃN 1 (GIỮA CỘT TRÁI VÀ TRUNG TÂM) -->
+        <div class="column-resizer" id="resizer-left"></div>
+
+        <!-- KHU VỰC HIỂN THỊ CHÍNH & CỘT MÔ TẢ PHẢI -->
+        <div class="flex-1 flex p-6 overflow-hidden gap-4" id="main-content-wrapper">
+            
+            <!-- CENTRAL MEDIA PANEL (KHU VỰC TRUNG TÂM) -->
+            <div id="center-media-panel" class="flex-1 min-w-[350px] space-y-4 overflow-y-auto pr-1 custom-scrollbar">
+                
+                <div id="center-title-overlay" class="bg-gray-950 border border-gray-800 p-4 rounded-xl shadow-md hidden">
+                    <div class="flex items-center space-x-2 mb-1">
+                        <span id="overlay-step-badge" class="text-[10px] font-bold px-2 py-0.5 rounded dynamic-bg text-white">BƯỚC 1</span>
+                        <span class="text-xs text-gray-400"><i class="fa-solid fa-display"></i> Nội dung trực quan quy trình</span>
+                    </div>
+                    <h2 id="overlay-step-title" class="text-lg font-bold text-white">An toàn lao động - Kỹ thuật vận hành</h2>
+                    <p id="overlay-step-desc" class="text-xs text-gray-400 mt-1">Gá đặt camera công nghiệp song song với máng mực máy in. Định cấu hình tiêu cự và cường độ nguồn sáng LED để quét toàn diện bề mặt.</p>
+                </div>
+
+                <!-- KHU VỰC HIỂN THỊ TRỰC QUAN CHÍNH -->
+                <div class="bg-gray-950 border border-gray-800 rounded-xl overflow-hidden shadow-xl flex flex-col h-[520px] flex-shrink-0">
+                    <div class="bg-gray-900 border-b border-gray-800 px-4 py-2 flex justify-between items-center">
+                        <div class="flex space-x-2 text-xs">
+                            <button id="tab-img" onclick="switchMediaTab(&#39;img&#39;)" class="px-3 py-1.5 rounded font-medium transition text-gray-400 hover:text-white">
+                                <i class="fa-solid fa-image text-blue-400 mr-1"></i> Hình ảnh Quy trình
+                            </button>
+                            <button id="tab-vid" onclick="switchMediaTab(&#39;vid&#39;)" class="px-3 py-1.5 rounded font-medium transition bg-gray-800 text-white border border-gray-700">
+                                <i class="fa-solid fa-video text-rose-400 mr-1"></i> Video hướng dẫn động
+                            </button>
+                        </div>
+                        <span class="text-xs text-gray-500" id="media-status-indicator">Đang xem Video hướng dẫn</span>
+                    </div>
+
+                    <div id="media-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)" class="flex-1 bg-gray-900/40 flex items-center justify-center p-4 relative overflow-hidden">
+                        
+                        <!-- TAB 1: IMAGE MULTI VIEW -->
+                        <div id="media-img-container" class="w-full h-full flex flex-col space-y-2 hidden">
+                            <div class="flex-1 border border-dashed border-gray-800 rounded-lg bg-gray-950 flex items-center justify-center p-2 relative min-h-0">
+                                <img id="display-image" class="max-w-full max-h-full object-contain rounded" src="blob:null/2d781054-5c45-4ea8-ae83-088f3fd39e35" alt="Sơ đồ thao tác">
+                                <div id="image-placeholder" class="text-gray-500 flex flex-col items-center text-center p-4 hidden">
+                                    <i class="fa-solid fa-cloud-arrow-up text-5xl mb-3 text-gray-700"></i>
+                                    <p class="text-sm font-medium text-gray-400">Quăng (Kéo thả) Nhiều Ảnh của bạn vào đây</p>
+                                    <p class="text-xs text-gray-600 mt-1">Hoặc dùng bảng điều khiển tải lên phía dưới</p>
+                                </div>
+                            </div>
+                            <div id="image-list-strip" class="h-16 flex space-x-2 overflow-x-auto p-1 bg-gray-950 border border-gray-800 rounded-lg custom-scrollbar">
+                    <div onclick="selectActiveMedia(&#39;img&#39;, 1784451713681)" class="flex-shrink-0 h-full w-48 border rounded p-1 flex items-center justify-between gap-1 cursor-pointer transition border-gray-800 bg-gray-900/40">
+                        <i class="fa-solid fa-image text-blue-400 text-xs pl-1"></i>
+                        <input type="text" value="Áp dụng 5Why xử lý vấn đề" placeholder="Ghi chú file..." onclick="event.stopPropagation()" oninput="updateMediaItemNote(&#39;img&#39;, 1, 1784451713681, this.value)" class="w-full bg-gray-950 text-[10px] text-gray-200 px-1 py-0.5 rounded border border-gray-800 focus:outline-none">
+                        
+                            <button onclick="deleteSingleMedia(event, &#39;img&#39;, 1, 1784451713681)" class="text-gray-500 hover:text-rose-400 p-0.5 text-xs">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        
+                    </div>
+                
+                    <div onclick="selectActiveMedia(&#39;img&#39;, 1784451713428)" class="flex-shrink-0 h-full w-48 border rounded p-1 flex items-center justify-between gap-1 cursor-pointer transition border-gray-800 bg-gray-900/40">
+                        <i class="fa-solid fa-image text-blue-400 text-xs pl-1"></i>
+                        <input type="text" value="Testform" placeholder="Ghi chú file..." onclick="event.stopPropagation()" oninput="updateMediaItemNote(&#39;img&#39;, 1, 1784451713428, this.value)" class="w-full bg-gray-950 text-[10px] text-gray-200 px-1 py-0.5 rounded border border-gray-800 focus:outline-none">
+                        
+                            <button onclick="deleteSingleMedia(event, &#39;img&#39;, 1, 1784451713428)" class="text-gray-500 hover:text-rose-400 p-0.5 text-xs">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        
+                    </div>
+                
+                    <div onclick="selectActiveMedia(&#39;img&#39;, 1784451755992)" class="flex-shrink-0 h-full w-48 border rounded p-1 flex items-center justify-between gap-1 cursor-pointer transition border-gray-800 bg-gray-900/40">
+                        <i class="fa-solid fa-image text-blue-400 text-xs pl-1"></i>
+                        <input type="text" value="Hình ảnh lấy mực" placeholder="Ghi chú file..." onclick="event.stopPropagation()" oninput="updateMediaItemNote(&#39;img&#39;, 1, 1784451755992, this.value)" class="w-full bg-gray-950 text-[10px] text-gray-200 px-1 py-0.5 rounded border border-gray-800 focus:outline-none">
+                        
+                            <button onclick="deleteSingleMedia(event, &#39;img&#39;, 1, 1784451755992)" class="text-gray-500 hover:text-rose-400 p-0.5 text-xs">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        
+                    </div>
+                
+                    <div onclick="selectActiveMedia(&#39;img&#39;, 1784451760281)" class="flex-shrink-0 h-full w-48 border rounded p-1 flex items-center justify-between gap-1 cursor-pointer transition border-gray-800 bg-gray-900/40">
+                        <i class="fa-solid fa-image text-blue-400 text-xs pl-1"></i>
+                        <input type="text" value="Thay cao su" placeholder="Ghi chú file..." onclick="event.stopPropagation()" oninput="updateMediaItemNote(&#39;img&#39;, 1, 1784451760281, this.value)" class="w-full bg-gray-950 text-[10px] text-gray-200 px-1 py-0.5 rounded border border-gray-800 focus:outline-none">
+                        
+                            <button onclick="deleteSingleMedia(event, &#39;img&#39;, 1, 1784451760281)" class="text-gray-500 hover:text-rose-400 p-0.5 text-xs">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        
+                    </div>
+                </div>
+                        </div>
+
+                        <!-- TAB 2: VIDEO MULTI VIEW -->
+                        <div id="media-vid-container" class="w-full h-full flex flex-col space-y-2">
+                            <div class="w-full flex-1 border border-dashed border-gray-800 rounded-lg bg-gray-950 flex items-center justify-center relative min-h-0">
+                                <video id="display-video" class="max-w-full max-h-full rounded-lg" controls="" src="blob:null/b010c831-f11a-4aa5-b057-d46331f318be"></video>
+                                <div id="video-placeholder" class="text-gray-500 flex flex-col items-center text-center p-4 hidden">
+                                    <i class="fa-solid fa-file-video text-5xl mb-3 text-gray-700"></i>
+                                    <p class="text-sm font-medium text-gray-400">Quăng (Kéo thả) Nhiều Video máy tính vào đây</p>
+                                    <p class="text-xs text-gray-600 mt-1">Hỗ trợ định dạng .mp4, .webm,...</p>
+                                </div>
+                            </div>
+                            <div id="video-list-strip" class="h-16 flex space-x-2 overflow-x-auto p-1 bg-gray-950 border border-gray-800 rounded-lg custom-scrollbar">
+                    <div onclick="selectActiveMedia(&#39;vid&#39;, 1784451837703)" class="flex-shrink-0 h-full w-48 border rounded p-1 flex items-center justify-between gap-1 cursor-pointer transition border-gray-800 bg-gray-900/40">
+                        <i class="fa-solid fa-video text-rose-400 text-xs pl-1"></i>
+                        <input type="text" value="Recording 2026-02-08 015538.mp4" placeholder="Ghi chú file..." onclick="event.stopPropagation()" oninput="updateMediaItemNote(&#39;vid&#39;, 1, 1784451837703, this.value)" class="w-full bg-gray-950 text-[10px] text-gray-200 px-1 py-0.5 rounded border border-gray-800 focus:outline-none">
+                        
+                            <button onclick="deleteSingleMedia(event, &#39;vid&#39;, 1, 1784451837703)" class="text-gray-500 hover:text-rose-400 p-0.5 text-xs">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        
+                    </div>
+                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- BẢNG TẢI FILE NHANH -->
+                <div id="edit-media-links-panel" class="bg-gray-950 border border-gray-800 rounded-xl p-4 shadow-md space-y-3 hidden">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xs font-semibold uppercase tracking-wider dynamic-text"><i class="fa-solid fa-folder-open"></i> Tải tài nguyên lên bộ nhớ quy trình</h3>
+                        <div class="flex space-x-3 text-[11px]">
+                            <button onclick="deleteActiveMedia(&#39;img&#39;)" class="text-gray-500 hover:text-rose-400 transition"><i class="fa-solid fa-trash-can"></i> Xóa ảnh đang chọn</button>
+                            <button onclick="deleteActiveMedia(&#39;vid&#39;)" class="text-gray-500 hover:text-rose-400 transition"><i class="fa-solid fa-trash-can"></i> Xóa video đang chọn</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div onclick="document.getElementById(&#39;file-input-img&#39;).click()" class="border border-dashed border-gray-800 hover:border-gray-700 rounded-lg p-3 bg-gray-900/50 text-center cursor-pointer transition">
+                            <i class="fa-solid fa-image text-xl text-blue-400 mb-1"></i>
+                            <p class="text-xs text-gray-300 font-medium">Bấm chọn thêm File ẢNH</p>
+                            <input type="file" id="file-input-img" accept="image/*" multiple="" class="hidden" onchange="handleFileSelect(this, &#39;img&#39;)">
+                        </div>
+                        <div onclick="document.getElementById(&#39;file-input-vid&#39;).click()" class="border border-dashed border-gray-800 hover:border-gray-700 rounded-lg p-3 bg-gray-900/50 text-center cursor-pointer transition">
+                            <i class="fa-solid fa-video text-xl text-rose-400 mb-1"></i>
+                            <p class="text-xs text-gray-300 font-medium">Bấm chọn thêm File VIDEO</p>
+                            <input type="file" id="file-input-vid" accept="video/*" multiple="" class="hidden" onchange="handleFileSelect(this, &#39;vid&#39;)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THANH KÉO GIÃN 2 (GIỮA TRUNG TÂM VÀ CỘT PHẢI) -->
+            <div class="column-resizer" id="resizer-right"></div>
+
+            <!-- RIGHT INFO PANEL (CỘT MÔ TẢ CHI TIẾT) -->
+            <div id="right-info-panel" style="width: 617px; min-width: 300px; max-width: 750px;" class="flex-shrink-0 space-y-4 overflow-y-auto pr-1 custom-scrollbar">
+                <div class="bg-gray-950 border border-gray-800 rounded-xl p-6 shadow-xl space-y-6">
+                    
+                    <div class="space-y-2 border-b border-gray-800 pb-4">
+                        <div class="flex items-center space-x-2">
+                            <span id="display-step-num" class="text-xs font-bold px-2 py-0.5 rounded dynamic-bg text-white">BƯỚC 1</span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1"><i class="fa-solid fa-screwdriver-wrench"></i> Thao tác kỹ thuật</span>
+                        </div>
+                        <input type="text" id="input-step-title" oninput="updateCurrentStepTexts()" class="w-full bg-transparent text-xl font-bold text-white border-b border-transparent hover:border-gray-800 focus:border-gray-700 focus:outline-none py-1 rounded">
+                        <textarea id="input-step-desc" oninput="updateCurrentStepTexts()" rows="2" class="w-full bg-transparent text-sm text-gray-400 border border-transparent hover:border-gray-800 focus:border-gray-700 focus:outline-none p-1 rounded resize-none" placeholder="Mô tả hành động vận hành..."></textarea>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-semibold tracking-wider uppercase text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-toolbox text-amber-500"></i> Thiết bị &amp; Công cụ yêu cầu
+                        </h4>
+                        <input type="text" id="input-step-tools" oninput="updateCurrentStepTexts()" class="w-full bg-gray-900 border border-gray-800 rounded px-3 py-2 text-xs focus:outline-none dynamic-focus text-gray-300">
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xs font-semibold tracking-wider uppercase text-gray-400 flex items-center gap-2">
+                                <i class="fa-solid fa-square-nodes dynamic-text"></i> Các Nhánh mục tiêu / Thao tác con
+                            </h4>
+                            <button id="add-branch-btn" onclick="addNewBranch()" class="text-[10px] bg-gray-900 hover:bg-gray-800 dynamic-text border border-gray-800 px-2 py-0.5 rounded transition hidden">
+                                <i class="fa-solid fa-plus"></i> Chĩa nhánh mới
+                            </button>
+                        </div>
+                        <div id="branches-container" class="space-y-2 max-h-[200px] overflow-y-auto pr-1 custom-scrollbar">
+                        <div class="flex items-center space-x-2 bg-gray-900 p-2 rounded border border-gray-800 group/branch">
+                            <i class="fa-solid fa-turn-up rotate-90 text-gray-600 ml-1 text-xs"></i>
+                            <input type="text" value="Đảm bảo an toàn vận hành và sức khỏe người lao động " oninput="updateBranchText(1, 101, this.value)" class="flex-1 bg-transparent text-xs text-gray-200 focus:outline-none focus:border-b dynamic-border" placeholder="Nhập hành động chi tiết...">
+                            <button onclick="deleteBranch(1, 101)" class="opacity-0 group-hover/branch:opacity-100 text-gray-600 hover:text-rose-400 transition p-1">
+                                <i class="fa-solid fa-xmark text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="bg-amber-950/10 border border-amber-900/40 rounded-lg p-4 space-y-2">
+                        <h4 class="text-xs font-semibold tracking-wider uppercase text-amber-500 flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Cảnh báo lỗi &amp; Điểm kiểm soát (QC)
+                        </h4>
+                        <textarea id="input-step-warning" oninput="updateCurrentStepTexts()" rows="2" class="w-full bg-gray-900/40 text-xs text-amber-200 border border-amber-900/20 hover:border-amber-900/60 focus:outline-none p-2 rounded resize-none"></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const defaultSopData = [
+            {
+                id: 1,
+                title: "An toàn lao động - Kỹ thuật vận hành",
+                desc: "Kiểm tra toàn bộ trang thiết bị bảo hộ, nguồn điện tổng và hệ thống khí nén trước khi kích hoạt dây chuyền.",
+                tools: "Kính bảo hộ, găng tay chống hóa chất, đồng hồ đo áp suất",
+                warning: "Tuyệt đối không thao tác khi tay dính nước hoặc các hóa chất dung môi chưa được làm sạch.",
+                images: [], videos: [],
+                branches: [
+                    { id: 101, text: "Xác nhận mang đầy đủ đồ bảo hộ lao động tiêu chuẩn", checked: false },
+                    { id: 102, text: "Kiểm tra van xả áp suất đạt chỉ số an toàn", checked: false }
+                ]
+            }
+        ];
+
+        let sopData = [...defaultSopData];
+        let currentStepId = 1;
+        let currentMediaTab = 'img';
+        let isFocusMode = false;
+        
+        let activeImgId = null;
+        let activeVidId = null;
+        let activeImgUrl = null;
+        let activeVidUrl = null;
+        let db = null;
+
+        // KHỞI TẠO INDEXEDDB
+        const dbRequest = indexedDB.open("SOPStudioFlexMediaDB", 3);
+        dbRequest.onupgradeneeded = (e) => {
+            let database = e.target.result;
+            if (!database.objectStoreNames.contains("mediaStore")) {
+                database.createObjectStore("mediaStore", { keyPath: "mediaKey" });
+            }
+        };
+        dbRequest.onsuccess = (e) => {
+            db = e.target.result;
+            initApp();
+        };
+
+        function initApp() {
+            if (localStorage.getItem('sop_studio_flex_data')) {
+                sopData = JSON.parse(localStorage.getItem('sop_studio_flex_data'));
+            }
+            if (localStorage.getItem('sop_studio_header_title')) {
+                document.getElementById('header-title').innerText = localStorage.getItem('sop_studio_header_title');
+            }
+            if (localStorage.getItem('sop_studio_header_subtitle')) {
+                document.getElementById('header-subtitle').innerText = localStorage.getItem('sop_studio_header_subtitle');
+            }
+            if (localStorage.getItem('sop_studio_footer_text')) {
+                document.getElementById('footer-text').innerText = localStorage.getItem('sop_studio_footer_text');
+            }
+
+            if(sopData.length > 0) currentStepId = sopData[0].id;
+
+            renderStepsList();
+            loadStepDetails(currentStepId);
+            initResizableColumns(); // Kích hoạt chức năng kéo giãn cột
+            
+            if (window.location.hash === '#view') {
+                document.getElementById('header-title').contentEditable = "false";
+                document.getElementById('header-subtitle').contentEditable = "false";
+                document.getElementById('footer-text').contentEditable = "false";
+                document.getElementById('sidebar-add-btn').classList.add('hidden');
+                document.getElementById('add-branch-btn').classList.add('hidden');
+                document.getElementById('edit-media-links-panel').classList.add('hidden');
+                isFocusMode = false; 
+                toggleFocusMode(); 
+            }
+        }
+
+        // LOGIC KÉO THU PHÓNG KÍCH THƯỚC CỘT (DRAG TO RESIZE)
+        function initResizableColumns() {
+            const leftResizer = document.getElementById('resizer-left');
+            const rightResizer = document.getElementById('resizer-right');
+            const sidebar = document.getElementById('sidebar-panel');
+            const rightPanel = document.getElementById('right-info-panel');
+            const workspace = document.getElementById('workspace-container');
+            const mainWrapper = document.getElementById('main-content-wrapper');
+
+            // Kéo cột trái (Danh sách các bước)
+            leftResizer.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                leftResizer.classList.add('dragging');
+                document.addEventListener('mousemove', resizeLeft);
+                document.addEventListener('mouseup', stopResizeLeft);
+            });
+
+            function resizeLeft(e) {
+                const workspaceRect = workspace.getBoundingClientRect();
+                let newWidth = e.clientX - workspaceRect.left;
+                if (newWidth >= 220 && newWidth <= 480) {
+                    sidebar.style.width = newWidth + 'px';
+                }
+            }
+
+            function stopResizeLeft() {
+                leftResizer.classList.remove('dragging');
+                document.removeEventListener('mousemove', resizeLeft);
+                document.removeEventListener('mouseup', stopResizeLeft);
+            }
+
+            // Kéo cột phải (Mô tả chi tiết)
+            rightResizer.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                rightResizer.classList.add('dragging');
+                document.addEventListener('mousemove', resizeRight);
+                document.addEventListener('mouseup', stopResizeRight);
+            });
+
+            function resizeRight(e) {
+                const wrapperRect = mainWrapper.getBoundingClientRect();
+                let newWidth = wrapperRect.right - e.clientX;
+                if (newWidth >= 300 && newWidth <= 750) {
+                    rightPanel.style.width = newWidth + 'px';
+                }
+            }
+
+            function stopResizeRight() {
+                rightResizer.classList.remove('dragging');
+                document.removeEventListener('mousemove', resizeRight);
+                document.removeEventListener('mouseup', stopResizeRight);
+            }
+        }
+
+        function saveMediaToDB(key, fileBlob) {
+            if (!db) return;
+            const tx = db.transaction("mediaStore", "readwrite");
+            tx.objectStore("mediaStore").put({ mediaKey: key, blobData: fileBlob });
+        }
+
+        function getMediaFromDB(key, callback) {
+            if (!db) return callback(null);
+            const tx = db.transaction("mediaStore", "readonly");
+            const req = tx.objectStore("mediaStore").get(key);
+            req.onsuccess = (e) => {
+                if(e.target.result) callback(e.target.result.blobData);
+                else callback(null);
+            };
+            req.onerror = () => callback(null);
+        }
+
+        function deleteMediaFromDB(key) {
+            if (!db) return;
+            const tx = db.transaction("mediaStore", "readwrite");
+            tx.objectStore("mediaStore").delete(key);
+        }
+
+        function saveAllToStorage() {
+            localStorage.setItem('sop_studio_flex_data', JSON.stringify(sopData));
+            localStorage.setItem('sop_studio_header_title', document.getElementById('header-title').innerText);
+            localStorage.setItem('sop_studio_header_subtitle', document.getElementById('header-subtitle').innerText);
+            localStorage.setItem('sop_studio_footer_text', document.getElementById('footer-text').innerText);
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            if (window.location.hash === '#view') return;
+            document.getElementById('media-dropzone').classList.add('drag-over-zone');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            document.getElementById('media-dropzone').classList.remove('drag-over-zone');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            document.getElementById('media-dropzone').classList.remove('drag-over-zone');
+            if (window.location.hash === '#view') return;
+            if (e.dataTransfer.files.length > 0) {
+                Array.from(e.dataTransfer.files).forEach(file => processUploadedFile(file));
+            }
+        }
+
+        function handleFileSelect(input, forcedType) {
+            if (input.files && input.files.length > 0) {
+                Array.from(input.files).forEach(file => processUploadedFile(file, forcedType));
+            }
+            input.value = '';
+        }
+
+        function processUploadedFile(file, forcedType) {
+            const step = sopData.find(s => s.id === currentStepId);
+            if (!step) return;
+
+            let isImage = file.type.startsWith('image/');
+            let isVideo = file.type.startsWith('video/');
+
+            if (forcedType === 'img') { isImage = true; isVideo = false; }
+            if (forcedType === 'vid') { isVideo = true; isImage = false; }
+
+            const mediaId = Date.now() + Math.floor(Math.random() * 1000);
+
+            if (isImage) {
+                if(!step.images) step.images = [];
+                const dbKey = `img_${mediaId}`;
+                step.images.push({ id: mediaId, dbKey: dbKey, note: file.name });
+                saveMediaToDB(dbKey, file);
+                activeImgId = mediaId;
+                saveAllToStorage();
+                switchMediaTab('img');
+                loadStepDetails(currentStepId);
+            } else if (isVideo) {
+                if(!step.videos) step.videos = [];
+                const dbKey = `vid_${mediaId}`;
+                step.videos.push({ id: mediaId, dbKey: dbKey, note: file.name });
+                saveMediaToDB(dbKey, file);
+                activeVidId = mediaId;
+                saveAllToStorage();
+                switchMediaTab('vid');
+                loadStepDetails(currentStepId);
+            }
+        }
+
+        function loadStepDetails(id) {
+            const step = sopData.find(s => s.id === id);
+            if (!step) return;
+
+            if(!step.images) step.images = [];
+            if(!step.videos) step.videos = [];
+
+            const index = sopData.findIndex(s => s.id === id);
+            document.getElementById('display-step-num').innerText = `BƯỚC ${index + 1}`;
+            document.getElementById('overlay-step-badge').innerText = `BƯỚC ${index + 1}`;
+            document.getElementById('overlay-step-title').innerText = step.title || '';
+            document.getElementById('overlay-step-desc').innerText = step.desc || '';
+
+            document.getElementById('input-step-title').value = step.title || '';
+            document.getElementById('input-step-desc').value = step.desc || '';
+            document.getElementById('input-step-tools').value = step.tools || '';
+            document.getElementById('input-step-warning').value = step.warning || '';
+
+            // XỬ LÝ ALBUM ẢNH
+            const imgEl = document.getElementById('display-image');
+            const imgPlaceholder = document.getElementById('image-placeholder');
+            const imgStrip = document.getElementById('image-list-strip');
+
+            if (step.images.length > 0) {
+                imgStrip.classList.remove('hidden');
+                renderMediaStrip(step, 'img');
+                if (!step.images.some(i => i.id === activeImgId)) activeImgId = step.images[0].id;
+                
+                const currentImg = step.images.find(i => i.id === activeImgId);
+                if (currentImg) {
+                    if(activeImgUrl) URL.revokeObjectURL(activeImgUrl);
+                    getMediaFromDB(currentImg.dbKey, (blob) => {
+                        if (blob) {
+                            activeImgUrl = URL.createObjectURL(blob);
+                            imgEl.src = activeImgUrl;
+                            imgEl.classList.remove('hidden');
+                            imgPlaceholder.classList.add('hidden');
+                        }
+                    });
+                }
+            } else {
+                imgEl.classList.add('hidden');
+                imgPlaceholder.classList.remove('hidden');
+                imgStrip.classList.add('hidden');
+                activeImgId = null;
+            }
+
+            // XỬ LÝ ALBUM VIDEO
+            const vidEl = document.getElementById('display-video');
+            const vidPlaceholder = document.getElementById('video-placeholder');
+            const vidStrip = document.getElementById('video-list-strip');
+
+            if (step.videos.length > 0) {
+                vidStrip.classList.remove('hidden');
+                renderMediaStrip(step, 'vid');
+                if (!step.videos.some(v => v.id === activeVidId)) activeVidId = step.videos[0].id;
+
+                const currentVid = step.videos.find(v => v.id === activeVidId);
+                if (currentVid) {
+                    if(activeVidUrl) URL.revokeObjectURL(activeVidUrl);
+                    getMediaFromDB(currentVid.dbKey, (blob) => {
+                        if (blob) {
+                            activeVidUrl = URL.createObjectURL(blob);
+                            vidEl.src = activeVidUrl;
+                            vidEl.classList.remove('hidden');
+                            vidPlaceholder.classList.add('hidden');
+                            vidEl.load();
+                        }
+                    });
+                }
+            } else {
+                vidEl.classList.add('hidden');
+                vidPlaceholder.classList.remove('hidden');
+                vidStrip.classList.add('hidden');
+                activeVidId = null;
+                vidEl.src = "";
+            }
+
+            renderBranches(step);
+        }
+
+        function renderMediaStrip(step, type) {
+            const strip = document.getElementById(type === 'img' ? 'image-list-strip' : 'video-list-strip');
+            strip.innerHTML = '';
+            
+            const items = type === 'img' ? step.images : step.videos;
+            const activeId = type === 'img' ? activeImgId : activeVidId;
+            const icon = type === 'img' ? 'fa-image text-blue-400' : 'fa-video text-rose-400';
+
+            items.forEach(item => {
+                const isActive = item.id === activeId;
+                const activeClass = isActive ? 'border-[var(--accent-color)] bg-gray-900' : 'border-gray-800 bg-gray-900/40';
+                const isReadOnly = window.location.hash === '#view' ? 'readonly' : '';
+
+                strip.innerHTML += `
+                    <div onclick="selectActiveMedia('${type}', ${item.id})" class="flex-shrink-0 h-full w-48 border rounded p-1 flex items-center justify-between gap-1 cursor-pointer transition ${activeClass}">
+                        <i class="fa-solid ${icon} text-xs pl-1"></i>
+                        <input type="text" value="${item.note || ''}" placeholder="Ghi chú file..."
+                            onclick="event.stopPropagation()"
+                            oninput="updateMediaItemNote('${type}', ${step.id}, ${item.id}, this.value)"
+                            ${isReadOnly}
+                            class="w-full bg-gray-950 text-[10px] text-gray-200 px-1 py-0.5 rounded border border-gray-800 focus:outline-none">
+                        ${window.location.hash !== '#view' ? `
+                            <button onclick="deleteSingleMedia(event, '${type}', ${step.id}, ${item.id})" class="text-gray-500 hover:text-rose-400 p-0.5 text-xs">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            });
+        }
+
+        function selectActiveMedia(type, id) {
+            if (type === 'img') activeImgId = id;
+            else activeVidId = id;
+            loadStepDetails(currentStepId);
+        }
+
+        function updateMediaItemNote(type, stepId, itemId, val) {
+            const step = sopData.find(s => s.id === stepId);
+            const items = type === 'img' ? step.images : step.videos;
+            const item = items.find(i => i.id === itemId);
+            if (item) {
+                item.note = val;
+                saveAllToStorage();
+            }
+        }
+
+        function deleteSingleMedia(event, type, stepId, itemId) {
+            if(event) event.stopPropagation();
+            if(!confirm("Bạn có muốn xóa file này khỏi danh sách?")) return;
+            
+            const step = sopData.find(s => s.id === stepId);
+            if (!step) return;
+
+            if (type === 'img') {
+                const item = step.images.find(i => i.id === itemId);
+                if (item) deleteMediaFromDB(item.dbKey);
+                step.images = step.images.filter(i => i.id !== itemId);
+                if (activeImgId === itemId) activeImgId = null;
+            } else {
+                const item = step.videos.find(v => v.id === itemId);
+                if (item) deleteMediaFromDB(item.dbKey);
+                step.videos = step.videos.filter(v => v.id !== itemId);
+                if (activeVidId === itemId) activeVidId = null;
+            }
+            saveAllToStorage();
+            loadStepDetails(currentStepId);
+        }
+
+        function deleteActiveMedia(type) {
+            if (type === 'img' && activeImgId) {
+                deleteSingleMedia(null, 'img', currentStepId, activeImgId);
+            } else if (type === 'vid' && activeVidId) {
+                deleteSingleMedia(null, 'vid', currentStepId, activeVidId);
+            } else {
+                alert("Không có file nào đang hiển thị để xóa!");
+            }
+        }
+
+        function toggleFocusMode() {
+            isFocusMode = !isFocusMode;
+            const sidebar = document.getElementById('sidebar-panel');
+            const rightPanel = document.getElementById('right-info-panel');
+            const editLinks = document.getElementById('edit-media-links-panel');
+            const btnFocus = document.getElementById('btn-focus-mode');
+            const titleOverlay = document.getElementById('center-title-overlay');
+            const resizerLeft = document.getElementById('resizer-left');
+            const resizerRight = document.getElementById('resizer-right');
+
+            if (isFocusMode) {
+                sidebar.classList.add('hidden');
+                rightPanel.classList.add('hidden');
+                editLinks.classList.add('hidden');
+                resizerLeft.classList.add('hidden');
+                resizerRight.classList.add('hidden');
+                titleOverlay.classList.remove('hidden');
+                btnFocus.innerHTML = '<i class="fa-solid fa-compress"></i> Thoát Tập trung';
+                btnFocus.classList.add('bg-amber-950/80', 'text-amber-300 border-amber-500');
+            } else {
+                sidebar.classList.remove('hidden');
+                rightPanel.classList.remove('hidden');
+                resizerLeft.classList.remove('hidden');
+                resizerRight.classList.remove('hidden');
+                if(window.location.hash !== '#view') editLinks.classList.remove('hidden');
+                titleOverlay.classList.add('hidden');
+                btnFocus.innerHTML = '<i class="fa-solid fa-expand"></i> Chế độ Tập trung';
+                btnFocus.classList.remove('bg-amber-950/80', 'text-amber-300 border-amber-500');
+            }
+        }
+
+        function renderStepsList() {
+            const listContainer = document.getElementById('steps-list');
+            listContainer.innerHTML = '';
+            
+            sopData.forEach((step, index) => {
+                const isActive = step.id === currentStepId;
+                const activeClass = isActive 
+                    ? 'bg-gradient-to-r from-gray-800 to-gray-850 border-l-4 dynamic-border text-white shadow-md' 
+                    : 'text-gray-400 hover:bg-gray-900/60 hover:text-gray-200 border-l-4 border-transparent';
+                
+                const deleteButton = window.location.hash !== '#view' ? `
+                    <button onclick="deleteStep(event, ${step.id})" class="opacity-0 group-hover:opacity-100 text-gray-600 hover:text-rose-400 p-1 transition">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                ` : '';
+
+                listContainer.innerHTML += `
+                    <div onclick="selectStep(${step.id})" class="group flex items-center justify-between p-3 rounded-r-lg cursor-pointer transition ${activeClass}">
+                        <div class="flex items-center space-x-2 overflow-hidden pr-2">
+                            <span class="text-xs font-mono font-bold ${isActive ? 'dynamic-text' : 'text-gray-600'}">0${index + 1}</span>
+                            <span class="text-xs font-medium truncate">${step.title || 'Bước chưa đặt tên'}</span>
+                        </div>
+                        ${deleteButton}
+                    </div>
+                `;
+            });
+        }
+
+        function selectStep(id) {
+            currentStepId = id;
+            activeImgId = null;
+            activeVidId = null;
+            renderStepsList();
+            loadStepDetails(id);
+        }
+
+        function renderBranches(step) {
+            const container = document.getElementById('branches-container');
+            container.innerHTML = '';
+
+            if (!step.branches || step.branches.length === 0) {
+                container.innerHTML = `<p class="text-xs text-gray-600 italic">Chưa chĩa nhánh thao tác chi tiết nào cho bước này.</p>`;
+                return;
+            }
+
+            step.branches.forEach((branch) => {
+                if (window.location.hash !== '#view') {
+                    container.innerHTML += `
+                        <div class="flex items-center space-x-2 bg-gray-900 p-2 rounded border border-gray-800 group/branch">
+                            <i class="fa-solid fa-turn-up rotate-90 text-gray-600 ml-1 text-xs"></i>
+                            <input type="text" value="${branch.text}" oninput="updateBranchText(${step.id}, ${branch.id}, this.value)" class="flex-1 bg-transparent text-xs text-gray-200 focus:outline-none focus:border-b dynamic-border" placeholder="Nhập hành động chi tiết...">
+                            <button onclick="deleteBranch(${step.id}, ${branch.id})" class="opacity-0 group-hover/branch:opacity-100 text-gray-600 hover:text-rose-400 transition p-1">
+                                <i class="fa-solid fa-xmark text-xs"></i>
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    const isChecked = branch.checked ? 'checked' : '';
+                    const textStyle = branch.checked ? 'line-through text-gray-500 font-normal' : 'text-gray-200 font-medium';
+                    container.innerHTML += `
+                        <label class="flex items-start space-x-3 bg-gray-900/60 p-2.5 rounded-lg border border-gray-800 hover:border-gray-700 cursor-pointer transition select-none">
+                            <input type="checkbox" ${isChecked} onclick="toggleBranchCheck(${step.id}, ${branch.id})" class="mt-0.5 rounded border-gray-700 dynamic-text focus:ring-offset-gray-900 bg-gray-950 w-4 h-4">
+                            <span class="text-xs ${textStyle}">${branch.text}</span>
+                        </label>
+                    `;
+                }
+            });
+        }
+
+        function updateCurrentStepTexts() {
+            const step = sopData.find(s => s.id === currentStepId);
+            if (!step) return;
+            step.title = document.getElementById('input-step-title').value;
+            step.desc = document.getElementById('input-step-desc').value;
+            step.tools = document.getElementById('input-step-tools').value;
+            step.warning = document.getElementById('input-step-warning').value;
+            
+            document.getElementById('overlay-step-title').innerText = step.title;
+            document.getElementById('overlay-step-desc').innerText = step.desc;
+            
+            const activeSidebarItem = document.querySelector(`#steps-list .dynamic-border span.truncate`);
+            if (activeSidebarItem) activeSidebarItem.innerText = step.title || 'Bước chưa đặt tên';
+
+            saveAllToStorage();
+        }
+
+        function updateBranchText(stepId, branchId, val) {
+            const step = sopData.find(s => s.id === stepId);
+            if (!step) return;
+            const branch = step.branches.find(b => b.id === branchId);
+            if (branch) branch.text = val;
+            saveAllToStorage();
+        }
+
+        function addNewStep() {
+            const newId = sopData.length > 0 ? Math.max(...sopData.map(s => s.id)) + 1 : 1;
+            const newStep = {
+                id: newId,
+                title: "Bước vận hành mới " + newId,
+                desc: "Mô tả thao tác...",
+                tools: "", warning: "", images: [], videos: [],
+                branches: [{ id: Date.now(), text: "Thao tác nhánh chi tiết đầu tiên", checked: false }]
+            };
+            sopData.push(newStep);
+            currentStepId = newId;
+            activeImgId = null;
+            activeVidId = null;
+            renderStepsList();
+            loadStepDetails(newId);
+            saveAllToStorage();
+        }
+
+        function deleteStep(event, id) {
+            event.stopPropagation();
+            if (sopData.length <= 1) return alert("Hồ sơ phải giữ lại ít nhất 1 bước!");
+            if(confirm("Bạn có chắc chắn muốn xóa hoàn toàn bước này không?")) {
+                const step = sopData.find(s => s.id === id);
+                if(step) {
+                    if(step.images) step.images.forEach(i => deleteMediaFromDB(i.dbKey));
+                    if(step.videos) step.videos.forEach(v => deleteMediaFromDB(v.dbKey));
+                }
+                sopData = sopData.filter(s => s.id !== id);
+                if (currentStepId === id) currentStepId = sopData[0].id;
+                renderStepsList();
+                loadStepDetails(currentStepId);
+                saveAllToStorage();
+            }
+        }
+
+        function addNewBranch() {
+            const step = sopData.find(s => s.id === currentStepId);
+            if (!step) return;
+            if (!step.branches) step.branches = [];
+            step.branches.push({ id: Date.now(), text: "", checked: false });
+            renderBranches(step);
+            saveAllToStorage();
+        }
+
+        function deleteBranch(stepId, branchId) {
+            const step = sopData.find(s => s.id === stepId);
+            if (!step) return;
+            step.branches = step.branches.filter(b => b.id !== branchId);
+            renderBranches(step);
+            saveAllToStorage();
+        }
+
+        function toggleBranchCheck(stepId, branchId) {
+            const step = sopData.find(s => s.id === stepId);
+            if (!step) return;
+            const branch = step.branches.find(b => b.id === branchId);
+            if (branch) branch.checked = !branch.checked;
+            renderBranches(step);
+            saveAllToStorage();
+        }
+
+        function switchMediaTab(tab) {
+            currentMediaTab = tab;
+            ['tab-img', 'tab-vid'].forEach(t => {
+                document.getElementById(t).className = "px-3 py-1.5 rounded font-medium transition text-gray-400 hover:text-white";
+            });
+            document.getElementById('media-img-container').classList.add('hidden');
+            document.getElementById('media-vid-container').classList.add('hidden');
+
+            if (tab === 'img') {
+                document.getElementById('tab-img').className = "px-3 py-1.5 rounded font-medium transition bg-gray-800 text-white border border-gray-700";
+                document.getElementById('media-img-container').classList.remove('hidden');
+                document.getElementById('media-status-indicator').innerText = "Đang hiển thị Sơ đồ";
+            } else if (tab === 'vid') {
+                document.getElementById('tab-vid').className = "px-3 py-1.5 rounded font-medium transition bg-gray-800 text-white border border-gray-700";
+                document.getElementById('media-vid-container').classList.remove('hidden');
+                document.getElementById('media-status-indicator').innerText = "Đang xem Video hướng dẫn";
+            }
+        }
+    </script>
+
+</body></html>
